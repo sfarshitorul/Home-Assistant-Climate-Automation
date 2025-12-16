@@ -1,5 +1,5 @@
 # HASS_Climate_Automation
-My Node-RED automation for the home climate. <br/>
+My Node-RED automation for the home climate. I have a gas heater and radiators in all rooms + a multi-split HVAC unit that can heat/cool the bedroom and the living room<br/>
 
 This is running on a <b>Raspi4 4GB RAM</b><br/>
 Related hardware (some links refer to Romanian website as I am located in Romania). Most of these devices are Zigbee devices controlled via Zigbee2MQTT. The HVAC is the exception, that is WiFi but with full local control.
