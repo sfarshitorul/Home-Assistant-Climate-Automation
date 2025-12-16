@@ -7,7 +7,7 @@ Related hardware (some links refer to Romanian website as I am located in Romani
    <b><i><a href="https://www.wifistore.ro/cumpara/shelly-1-gen4-multiprotocol-wi-fi-bluetooth-zigbee-3-0-matter-126323">Shelly S4SW-001X16EU</a></i></b> - This is a DRY-CONTACT relay!
   - Radiator TRV: <b><i><a href="https://moeshouse.com/products/moes-zigbee-trv-by100">MOES BRT-100-TRV</a></i></b> & <b><i><a href="https://www.wifistore.ro/cumpara/sonoff-trvzb-zigbee-supapa-termostatica-pentru-radiator-85164">SONOFF TRVZB</a></i></b>
   - Temp sensors: <b><i><a href="https://www.wifistore.ro/cumpara/senzor-de-temperatura-si-umiditate-sonoff-snzb-02d-zigbee-3-0-cu-78113">SONOFF SNZB-02D</a></i></b> (I do not rely on TRV temp or HVAC temps as they are not very accurate and I might want to check the temp in certain parts of the room and not at the TRV/HVAC location.
-  - Window sensors: <b><i><a href="https://www.ikea.com/ro/ro/p/parasoll-senzor-usa-fereastra-smart-alb-80504308/">IKEA E2013</a></i></b>
+  - Window sensors: <b><i><a href="https://www.ikea.com/ro/ro/p/parasoll-senzor-usa-fereastra-smart-alb-80504308/">IKEA Parasoll</a></i></b>
   - HVAC: <a href="https://www.daikin.ro/ro_ro/rezidential/products-and-advice/product-categories/air-conditioners/comfora.html">Daikin Comfora</a> + <a href="https://github.com/revk/ESP32-Faikout">Faikout module</a> ( I FUCKING hate cloud control for home devices so I love this product - if you can, please support the project) 
 
 <br/>
