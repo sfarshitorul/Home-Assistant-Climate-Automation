@@ -1,0 +1,399 @@
+views:
+  - title: Home
+    cards:
+      - type: grid
+        cards:
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: navigate
+              navigation_path: /lovelace
+            icon: mdi:home
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: navigate
+              navigation_path: /dashboard-ac
+            icon: mdi:air-conditioner
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: navigate
+              navigation_path: /dashboard-automations
+            icon: mdi:home-automation
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: navigate
+              navigation_path: /dashboard-switches
+            icon: mdi:power
+          - show_name: true
+            show_icon: true
+            type: button
+            tap_action:
+              action: navigate
+              navigation_path: /dashboard-media
+            icon: mdi:cast
+        columns: 5
+      - type: entities
+        entities:
+          - entity: switch.kitchen_centrala
+            name: Centrala
+            secondary_info: last-changed
+          - entity: switch.balcony_radiator
+            secondary_info: last-updated
+          - entity: input_boolean.radiator_manual_override
+            name: Balcony Manual Override
+            secondary_info: last-updated
+          - entity: input_number.away_temp
+          - entity: input_boolean.we_are_away
+            secondary_info: last-updated
+          - entity: input_boolean.summer_mode
+            secondary_info: last-updated
+        state_color: true
+        title: Caldura
+        show_header_toggle: false
+      - type: custom:tabbed-card
+        styles:
+          '--mdc-theme-primary': green
+          '--mdc-tab-text-label-color-default': gray
+          '--mdc-typography-button-font-size': 12px
+        options: {}
+        tabs:
+          - card:
+              type: glance
+              entities:
+                - entity: input_boolean.bbls_heater_needed
+                  name: Bbls
+                - entity: input_boolean.bedroom_heater_needed
+                  name: Bedroom
+                - entity: input_boolean.living_heater_needed
+                  name: Living
+                - entity: input_boolean.balcony_heater_needed
+                  name: Balcony
+            attributes:
+              label: Heat Req By
+          - card:
+              type: glance
+              entities:
+                - entity: sensor.bbls_temp_temperature
+                  name: Bbls
+                - entity: sensor.bedroom_temp_temperature
+                  name: Bedroom
+                - entity: sensor.living_temp_temperature
+                  name: Living
+                - entity: sensor.balcony_temp_temperature
+                  name: Balcony
+            attributes:
+              label: Temperatures
+          - card:
+              type: glance
+              entities:
+                - entity: sensor.bbls_temp_humidity
+                  name: Bbls
+                - entity: sensor.bedroom_temp_humidity
+                  name: Bedroom
+                - entity: sensor.living_temp_humidity
+                  name: Living
+                - entity: sensor.balcony_temp_humidity
+                  name: Balcony
+            attributes:
+              label: Humidity
+      - type: custom:tabbed-card
+        styles:
+          '--mdc-theme-primary': green
+          '--mdc-tab-text-label-color-default': gray
+          '--mdc-typography-button-font-size': 10px
+        options: {}
+        tabs:
+          - card:
+              type: entities
+              title: Bbls Target Temp
+              entities:
+                - entity: sensor.bbls_temp_temperature
+                  name: Current Temp
+                - entity: input_number.bbls_night_temp
+                  name: Night
+                - entity: input_number.bbls_morning_temp
+                  name: Morning
+                - entity: input_number.bbls_day_temp
+                  name: Day
+                - entity: input_number.bbls_evening_temp
+                  name: Evening
+                - entity: input_number.bbls_delta_temp
+                  name: Delta
+            attributes:
+              label: Bbls
+          - card:
+              type: entities
+              title: Living Target Temp
+              entities:
+                - entity: sensor.living_temp_temperature
+                  name: Current Temp
+                - entity: input_number.living_night_temp
+                  name: Night
+                - entity: input_number.living_morning_temp
+                  name: Morning
+                - entity: input_number.living_day_temp
+                  name: Day
+                - entity: input_number.living_evening_temp
+                  name: Evening
+                - entity: input_number.living_delta_temp
+                  name: Delta
+            attributes:
+              label: Living
+          - card:
+              type: entities
+              title: Bedroom Target Temp
+              entities:
+                - entity: sensor.bedroom_temp_temperature
+                  name: Current Temp
+                - entity: input_number.bedroom_night_temp
+                  name: Night
+                - entity: input_number.bedroom_morning_temp
+                  name: Morning
+                - entity: input_number.bedroom_day_temp
+                  name: Day
+                - entity: input_number.bedroom_evening_temp
+                  name: Evening
+                - entity: input_number.bedroom_delta_temp
+                  name: Delta
+            attributes:
+              label: Bedroom
+          - card:
+              type: entities
+              title: Balcony Target Temp
+              entities:
+                - entity: sensor.balcony_temp_temperature
+                  name: Current Temp
+                - entity: input_number.balcony_night_temp
+                  name: Night
+                - entity: input_number.balcony_morning_temp
+                  name: Morning
+                - entity: input_number.balcony_day_temp
+                  name: Day
+                - entity: input_number.balcony_evening_temp
+                  name: Evening
+                - entity: input_number.balcony_delta_temp
+                  name: Delta
+            attributes:
+              label: Balcony
+          - card:
+              type: entities
+              title: Kitchen Target Temp
+              entities:
+                - entity: input_number.kitchen_night_temp
+                  name: Night
+                - entity: input_number.kitchen_morning_temp
+                  name: Morning
+                - entity: input_number.kitchen_day_temp
+                  name: Day
+                - entity: input_number.kitchen_evening_temp
+                  name: Evening
+            attributes:
+              label: Kitchen
+      - type: custom:tabbed-card
+        styles:
+          '--mdc-theme-primary': green
+          '--mdc-tab-text-label-color-default': gray
+          '--mdc-typography-button-font-size': 10px
+        options: {}
+        tabs:
+          - card:
+              type: custom:better-thermostat-ui-card
+              entity: climate.bbls_trv
+            attributes:
+              label: Bbls
+          - card:
+              type: custom:better-thermostat-ui-card
+              entity: climate.living_trv
+            attributes:
+              label: Living
+          - card:
+              type: custom:better-thermostat-ui-card
+              entity: climate.bedroom_trv
+            attributes:
+              label: Bed
+          - card:
+              type: custom:better-thermostat-ui-card
+              entity: climate.kitchen_trv
+            attributes:
+              label: Kit
+          - card:
+              type: custom:better-thermostat-ui-card
+              entity: climate.bathroom_trv
+            attributes:
+              label: Bath
+      - type: custom:tabbed-card
+        styles:
+          '--mdc-theme-primary': green
+          '--mdc-tab-text-label-color-default': gray
+          '--mdc-typography-button-font-size': 12px
+        options: {}
+        tabs:
+          - card:
+              type: custom:better-thermostat-ui-card
+              entity: climate.living_acunit_mqtt_hvac
+            attributes:
+              label: Living
+          - card:
+              type: custom:better-thermostat-ui-card
+              entity: climate.bedroom_acunit_mqtt_hvac
+            attributes:
+              label: Bedroom
+      - type: custom:tabbed-card
+        options: {}
+        tabs:
+          - card:
+              type: vertical-stack
+              cards:
+                - type: glance
+                  entities:
+                    - entity: sensor.bedroom_temp_temperature
+                      name: Current Temp
+                    - entity: sensor.bedroom_temp_humidity
+                      name: Current Humidity
+                    - entity: input_boolean.bedroom_heater_needed
+                      name: Heater Needed
+                - type: glance
+                  entities:
+                    - entity: input_number.bedroom_night_temp
+                      name: Night
+                    - entity: input_number.bedroom_morning_temp
+                      name: Morning
+                    - entity: input_number.bedroom_day_temp
+                      name: Day
+                    - entity: input_number.bedroom_evening_temp
+                      name: Evening
+                - type: custom:better-thermostat-ui-card
+                  entity: climate.bedroom_trv
+                  name: Bedroom TRV
+                - type: custom:better-thermostat-ui-card
+                  entity: climate.bedroom_acunit_mqtt_hvac
+                  name: Bedroom AC
+            attributes:
+              label: Bedroom
+          - card:
+              type: vertical-stack
+              cards:
+                - type: glance
+                  entities:
+                    - entity: sensor.living_temp_temperature
+                      name: Current Temp
+                    - entity: sensor.living_temp_humidity
+                      name: Current Humidity
+                    - entity: input_boolean.living_heater_needed
+                      name: Heater Needed
+                    - entity: binary_sensor.living_window_contact
+                      name: Window
+                - type: glance
+                  entities:
+                    - entity: input_number.living_night_temp
+                      name: Night
+                    - entity: input_number.living_morning_temp
+                      name: Morning
+                    - entity: input_number.living_day_temp
+                      name: Day
+                    - entity: input_number.living_evening_temp
+                      name: Evening
+                - type: custom:better-thermostat-ui-card
+                  entity: climate.living_trv
+                  name: Living TRV
+                - type: custom:better-thermostat-ui-card
+                  entity: climate.living_acunit_mqtt_hvac
+                  name: Living AC
+            attributes:
+              label: Living
+          - card:
+              type: vertical-stack
+              cards:
+                - type: glance
+                  entities:
+                    - entity: sensor.bbls_temp_temperature
+                      name: Current Temp
+                    - entity: sensor.bbls_temp_humidity
+                      name: Current Humidity
+                    - entity: input_boolean.bbls_heater_needed
+                      name: Heater Needed
+                    - entity: binary_sensor.bbls_window_contact
+                      name: Window
+                - type: glance
+                  entities:
+                    - entity: input_number.bbls_night_temp
+                      name: Night
+                    - entity: input_number.bbls_morning_temp
+                      name: Morning
+                    - entity: input_number.bbls_day_temp
+                      name: Day
+                    - entity: input_number.bbls_evening_temp
+                      name: Evening
+                - type: custom:better-thermostat-ui-card
+                  entity: climate.bbls_trv
+                  name: Bbls TRV
+            attributes:
+              label: Bbls
+      - type: custom:tabbed-card
+        styles:
+          '--mdc-theme-primary': green
+          '--mdc-tab-text-label-color-default': gray
+          '--mdc-typography-button-font-size': 10px
+        options: {}
+        tabs:
+          - card:
+              type: entities
+              title: Bbls
+              entities:
+                - entity: input_number.bbls_morning_start
+                  name: Bbls Morning Start
+                - entity: input_number.bbls_day_start
+                  name: Bbls Day Start
+                - entity: input_number.bbls_evening_start
+                  name: Bbls Evening Start
+                - entity: input_number.bbls_night_start
+                  name: Bbls Night Start
+            attributes:
+              label: Bbls
+          - card:
+              type: entities
+              title: Living
+              entities:
+                - entity: input_number.living_morning_start
+                - entity: input_number.living_day_start
+                - entity: input_number.living_evening_start
+                - entity: input_number.living_night_start
+            attributes:
+              label: Living
+          - card:
+              type: entities
+              title: Bedroom
+              entities:
+                - entity: input_number.bedroom_morning_start
+                - entity: input_number.bedroom_day_start
+                - entity: input_number.bedroom_evening_start
+                - entity: input_number.bedroom_night_start
+            attributes:
+              label: Bedroom
+          - card:
+              type: entities
+              title: Balcony
+              entities:
+                - entity: input_number.balcony_morning_start
+                - entity: input_number.balcony_day_start
+                - entity: input_number.balcony_evening_start
+                - entity: input_number.balcony_night_start
+            attributes:
+              label: Balcony
+          - card:
+              type: entities
+              title: Kitchen
+              entities:
+                - entity: input_number.kitchen_morning_start
+                - entity: input_number.kitchen_day_start
+                - entity: input_number.kitchen_evening_start
+                - entity: input_number.kitchen_night_start
+            attributes:
+              label: Kitchen
