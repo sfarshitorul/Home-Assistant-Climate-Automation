@@ -1,8 +1,12 @@
 # HASS_Climate_Automation
-My Node-RED automation for the home climate. I have a gas heater and radiators in all rooms + a multi-split HVAC unit that can heat/cool the bedroom and the living room<br/>
+This is my Node-RED automation for the home climate. I have a gas heater and radiators in all rooms + a multi-split HVAC unit that can heat/cool the bedroom and the living room<br/>
 
 This is running on a <b>Raspi4 4GB RAM</b><br/>
-Related hardware (some links refer to Romanian website as I am located in Romania). Most of these devices are Zigbee devices controlled via Zigbee2MQTT. The HVAC is the exception, that is WiFi but with full local control.
+
+Related hardware (some links refer to Romanian website as I am located in Romania). Most of these devices are Zigbee devices controlled via Zigbee2MQTT. The HVAC is the exception, that is WiFi but with full local control.<br/><br/>
+
+Please note that this automation is agnostic, it gives no damn about that actual device you are using, as long as it can be controlled somehow by HA and the states of the those devices can be read by HA.<br/>
+You can use ZWave, Matter, Thread, WiFi devices. My poison of choice is ZigBee. It doesn't mean it has to be your poison too.<br/>
   - Heater ON/OFF: ATTENTION: Installing this  MEANS WORKING WITH 220V power, so if you don't know what you are doing please call a professional!!<br/>
    <b><i><a href="https://www.wifistore.ro/cumpara/shelly-1-gen4-multiprotocol-wi-fi-bluetooth-zigbee-3-0-matter-126323">Shelly S4SW-001X16EU</a></i></b> - This is a DRY-CONTACT relay!
   - Radiator TRV: <b><i><a href="https://moeshouse.com/products/moes-zigbee-trv-by100">MOES BRT-100-TRV</a></i></b> & <b><i><a href="https://www.wifistore.ro/cumpara/sonoff-trvzb-zigbee-supapa-termostatica-pentru-radiator-85164">SONOFF TRVZB</a></i></b>
