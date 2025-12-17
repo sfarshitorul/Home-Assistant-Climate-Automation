@@ -23,7 +23,7 @@ You can use ZWave, Matter, Thread, WiFi devices. My poison of choice is ZigBee. 
 ## How it works
 
 ### Variables
-These variables were defined in configuration.yaml (for now): (refer to <a href="configuration.yaml">configuration.yaml</a> file for all the variables)
+These variables were defined in two different files and referrenced into <a href="configuration.yaml">configuration.yaml</a>. Add these two lines somewhere near the top of the file.
   1. We are defining some day periods to have different temps based on these. These can be customized in the interface. These refer to the hour (in 24 hour format when that respective period begins)
      - bedroom_morning_start
      - bedroom_day_start
